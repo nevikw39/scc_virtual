@@ -9,5 +9,9 @@ opt/mpich-3.1.4/
 # zlib
 build/zlib-1.2.11.tar.gz
 build/zlib-1.2.11/
-opt/zlib-1.2.11
+opt/zlib-1.2.11/
 
+# HDF5
+build/hdf5-1.8.21.tar.bz2
+build/hdf5-1.8.21/
+opt/hdf5-1.8.21/

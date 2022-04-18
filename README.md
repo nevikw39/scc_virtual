@@ -56,3 +56,16 @@ make -j 56 install
 # make check
 ml load zlib-1.2.11-t
 ```
+
+### HDF5
+
+```bash
+cd $APPROOT/build
+wget https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8/hdf5-1.8.21/src/hdf5-1.8.21.tar.bz2
+tar xvf hdf5-1.8.21.tar.bz2
+cd hdf5-1.8.21
+CC=mpicc CXX=mpicxx F77=mpifort F90=mpif90 F9X=mpif90 FC=mpif90 ./configure --enable-parallel --enable-fortran --enable-hl --prefix=$APPROOT/opt/hdf5-1.8.21 --disable-shared --with-zlib=$APPROOT/opt/zlib-1.2.11
+make -j 56 install
+# sed -i "s|mpiexec|srun|g" . && make check
+ml load hdf5-1.8.21-t
+```
