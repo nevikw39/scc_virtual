@@ -1,2 +1,13 @@
 # Modules
 modules/
+
+# MPICH
+build/mpich-3.1.4.tar.gz
+build/mpich-3.1.4/
+opt/mpich-3.1.4/
+
+# zlib
+build/zlib-1.2.11.tar.gz
+build/zlib-1.2.11/
+opt/zlib-1.2.11
+
