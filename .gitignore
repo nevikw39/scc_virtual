@@ -15,3 +15,18 @@ opt/zlib-1.2.11/
 build/hdf5-1.8.21.tar.bz2
 build/hdf5-1.8.21/
 opt/hdf5-1.8.21/
+
+# pNetCDF
+build/pnetcdf-1.12.0.tar.gz
+build/pnetcdf-1.12.0/
+opt/pnetcdf-1.12.0/
+
+# NetCDF-C
+build/v4.7.3.tar.gz
+build/netcdf-c-4.7.3/
+opt/netcdf-c-4.7.3/
+
+# NetCDF-Fortran
+build/v4.4.5.tar.gz
+build/netcdf-fortran-4.4.5/
+opt/netcdf-fortran-4.4.5/

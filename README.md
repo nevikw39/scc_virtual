@@ -69,3 +69,42 @@ make -j 56 install
 # sed -i "s|mpiexec|srun|g" . && make check
 ml load hdf5-1.8.21-t
 ```
+
+### pNetCDF
+
+```bash
+cd $APPROOT/build
+wget https://parallel-netcdf.github.io/Release/pnetcdf-1.12.0.tar.gz
+tar zxvf pnetcdf-1.12.0.tar.gz
+cd pnetcdf-1.12.0
+CC=mpicc CXX=mpicxx CPPFLAGS=-I$APPROOT/opt/hdf5-1.8.21/include LDFLAGS="-L$APPROOT/opt/zlib-1.2.11/lib -L$APPROOT/opt/hdf5-1.8.21/lib" LIBS="-lz -lhdf5_hl -lhdf5 -lm" ./configure MPICC=mpicc MPICXX=mpicxx MPIF77=mpif77 MPIF90=mpif90 --prefix=$APPROOT/opt/pnetcdf-1.12.0
+make -j 56 install
+# make check
+ml load pnetcdf-1.12.0-t
+```
+
+### NetCDF-C
+
+```bash
+cd $APPROOT/build
+wget https://github.com/Unidata/netcdf-c/archive/refs/tags/v4.7.3.tar.gz
+tar zxvf v4.7.3.tar.gz
+cd netcdf-c-4.7.3
+CC=mpicc CXX=mpicxx CPPFLAGS="-I$APPROOT/opt/zlib-1.2.11/include -I$APPROOT/opt/hdf5-1.8.21/include -I$APPROOT/opt/pnetcdf-1.12.0/include" LDFLAGS="-L$APPROOT/opt/zlib-1.2.11/lib -L$APPROOT/opt/hdf5-1.8.21/lib -L$APPROOT/opt/pnetcdf-1.12.0/lib" LIBS="-lz -lhdf5_hl -lhdf5 -lpnetcdf -lm" ./configure --enable-pnetcdf --enable-netcdf4 --disable-dap --disable-shared --prefix=$APPROOT/opt/netcdf-c-4.7.3 
+make -j 56 install
+# sed -i "s|mpiexec|srun|g" nc_test/run_pnetcdf_test.sh && make check
+ml load netcdf-c-4.7.3-t
+```
+
+### NetCDF-Fortran
+
+```bash
+cd $APPROOT/build
+wget https://github.com/Unidata/netcdf-fortran/archive/v4.4.5.tar.gz
+tar zxvf v4.4.5.tar.gz
+cd netcdf-fortran-4.4.5
+CC=mpicc CXX=mpicxx FC=mpif90 CPPFLAGS="-I$APPROOT/opt/zlib-1.2.11/include -I$APPROOT/opt/hdf5-1.8.21/include -I$APPROOT/opt/pnetcdf-1.12.0/include -I$APPROOT/opt/netcdf-c-4.7.3/include" LDFLAGS="-L$APPROOT/opt/zlib-1.2.11/lib -L$APPROOT/opt/hdf5-1.8.21/lib -L$APPROOT/opt/pnetcdf-1.12.0/lib -L$APPROOT/opt/netcdf-c-4.7.3/lib" LIBS="-lz -lhdf5_hl -lhdf5 -lhdf5hl_fortran -lhdf5_fortran -lpnetcdf -lnetcdf -lm" ./configure --disable-shared -prefix=$APPROOT/opt/netcdf-fortran-4.4.5
+make -j 56 install
+# make check
+ml load netcdf-fortran-4.4.5-t
+```
