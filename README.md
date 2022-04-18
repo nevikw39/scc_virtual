@@ -19,3 +19,14 @@ source env.sh
 - build
 - opt
 - env.sh
+
+## WRF
+
+### Modules
+
+```bash
+git clone https://github.com/William-Mou/module_file.git
+mv module_file/modules modules
+rm -rf module_file
+sed -i "s|\$APPROOT|$APPROOT|g" $APPROOT/modules/*
+```
