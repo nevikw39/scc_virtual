@@ -2,6 +2,11 @@
 
 ## Commit Policy
 
+Create a [GitHub Token](https://github.com/settings/tokens) and clone this repo like:
+```bash
+git clone https://<username>:<token>@github.com/nevikw39/scc_virtual.git
+```
+
 - [.gitignore](https://github.com/nevikw39/scc_virtual/blob/master/.gitignore)
     - Ignore all file downloaded or cloned
     - Unignore everything modified (may need `git add --force`)
