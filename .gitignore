@@ -30,3 +30,8 @@ opt/netcdf-c-4.7.3/
 build/v4.4.5.tar.gz
 build/netcdf-fortran-4.4.5/
 opt/netcdf-fortran-4.4.5/
+
+# WRF
+opt/netcdf/
+build/WRF_ISC21/
+!build/WRF_ISC21/configure.wrf

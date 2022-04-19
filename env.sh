@@ -3,6 +3,9 @@ export MODULEPATH=$APPROOT/modules:$MODULEPATH
 export ZLIB=$APPROOT/opt/zlib-1.2.11
 export HDF5=$APPROOT/opt/hdf5-1.8.21
 export PNETCDF=$APPROOT/opt/pnetcdf-1.12.0
+export NETCDF4=1
+export NETCDF=$APPROOT/opt/netcdf
+export PATH=$APPROOT/opt/netcdf/bin:$PATH
 
 alias mpiexec=srun
 alias mpirun=srun
