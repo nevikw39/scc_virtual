@@ -38,6 +38,8 @@ source env.sh
   - netcdf-c-4.7.3
   - netcdf-fortran-4.4.5
 - env.sh
+- env_wrf.sh
+- env_gromacs.sh
 
 ## WRF
 
@@ -145,6 +147,7 @@ There would be some error since there is `pkgconfig` in both `netcdf-c` and `net
 
 ```bash
 cd $APPROOT/build
+source ../env_wrf.sh
 git clone https://github.com/wrf-model/WRF
 cd WRF
 git checkout tags/ISC21 -b ISC21-branch
