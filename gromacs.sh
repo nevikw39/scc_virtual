@@ -2,10 +2,13 @@
 
 #SBATCH -J GROMACS
 #SBATCH -A ACD110018
-#SBATCH -N 1
 #SBATCH -o gromacs_output.txt
 #SBATCH -e gromacs_error.txt
-#SBATCH --cpus-per-task 4
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=4
+#SBATCH --ntasks-per-core=2
+#SBATCH --hint=multithread
 #SBATCH --gres=gpu:1
 
 source env_gromacs.sh
