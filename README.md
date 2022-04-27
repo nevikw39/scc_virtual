@@ -55,6 +55,8 @@ sed -i "s|\$APPROOT|$APPROOT|g" $APPROOT/modules/*
 ### MPICH
 
 ```bash
+cd $APPROOT
+mkdir build
 cd $APPROOT/build
 wget http://www.mpich.org/static/downloads/3.1.4/mpich-3.1.4.tar.gz --no-check-certificate
 tar zxvf mpich-3.1.4.tar.gz
