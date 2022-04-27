@@ -11,10 +11,6 @@
 #SBATCH --hint=multithread
 #SBATCH --gres=gpu:1
 
-source env_gromacs.sh
-
-ml r scc_virtual_gromacs
-
 source $APPROOT/opt/gromacs/bin/GMXRC.bash
 
 export OMP_NUM_THREADS=4

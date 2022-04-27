@@ -162,7 +162,7 @@ Run on **Twnia2**!
 
 ```bash
 cd $APPROOT/build
-source ../env_gromacs.sh
+ml cmake/3.15.4 gcc9/9.3.1 cuda/11.3 openmpi4/4.1.1 fftw3/3.3.9
 wget https://ftp.gromacs.org/gromacs/gromacs-2021.5.tar.gz --no-check-certificate
 tar zxvf gromacs-2021.5.tar.gz
 cd gromacs-2021.5
@@ -171,15 +171,15 @@ cd build
 cmake -DGMX_MPI=ON -DCMAKE_INSTALL_PREFIX=$APPROOT/opt/gromacs -DGMX_GPU=CUDA -DGMX_SIMD=AVX_512 -DGMX_BUILD_OWN_FFTW=ON ..
 make install # -j 56
 # make check
-cd ../../..
+cd ../../../gromacs
 sbatcg gromacs.sh
 ```
 
 ### Container
 
 ```bash
-cd $APPROOT
-source env_gromacs.sh
+cd $APPROOT/gromacs
+ml singularity
 singularity build gromacs_2021.3.sif docker://nvcr.io/hpc/gromacs:2021.3
 wget https://ftp.gromacs.org/pub/benchmarks/water_GMX50_bare.tar.gz --no-check-certificate
 tar zxvf water_GMX50_bare.tar.gz

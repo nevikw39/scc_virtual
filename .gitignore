@@ -40,8 +40,8 @@ build/WRF_ISC21/
 build/gromacs-2021.5.tar.gz
 build/gromacs-2021.5/
 opt/gromacs/
-gromacs_2021.3.sif
-water_GMX50_bare.tar.gz
-water-cut1.0_GMX50_bare/
-gromacs*.txt
-stmv.tpr
+gromacs/gromacs_2021.3.sif
+gromacs/water_GMX50_bare.tar.gz
+gromacs/water-cut1.0_GMX50_bare/
+gromacs/gromacs*.txt
+gromacs/stmv.tpr
