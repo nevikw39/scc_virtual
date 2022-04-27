@@ -45,3 +45,12 @@ gromacs/water_GMX50_bare.tar.gz
 gromacs/water-cut1.0_GMX50_bare/
 gromacs/gromacs*.txt
 gromacs/stmv.tpr
+
+# OpenBLAS
+build/v0.3.20.tar.gz
+build/OpenBLAS-0.3.20/
+opt/OpenBLAS-0.3.20/
+
+# HPL
+hpl-2.3.tar.gz
+hpl-2.3/

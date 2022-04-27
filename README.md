@@ -185,3 +185,29 @@ wget https://ftp.gromacs.org/pub/benchmarks/water_GMX50_bare.tar.gz --no-check-c
 tar zxvf water_GMX50_bare.tar.gz
 sbatch gromac_singularity.sh
 ```
+
+## HPL
+
+### OpenBLAS
+
+```bash
+cd $APPROOT/build
+wget https://github.com/xianyi/OpenBLAS/archive/v0.3.20.tar.gz
+tar zxvf v0.3.20.tar.gz
+cd OpenBLAS-0.3.20
+ml compiler/gcc/7.5.0
+make CC=gcc FC=gfortran PREFIX=$APPROOT/opt/OpenBLAS-0.3.20 arch=x86-64 install # -j 56
+```
+
+### HPL
+
+```bash
+cd $APPROOT
+wget https://www.netlib.org/benchmark/hpl/hpl-2.3.tar.gz --no-check-certificate
+tar zxvf hpl-2.3.tar.gz
+cd hpl-2.3
+cp setup/Make.Linux_PII_CBLAS ./
+ml mpich-3.1.4-t
+make arch=Linux_PII_CBLAS install # -j 56
+sbatch hpl.sh
+```
